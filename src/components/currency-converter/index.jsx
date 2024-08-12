@@ -29,31 +29,44 @@ const Currency = () => {
 
   return (
     <>
-      <div className="input-container">
-        <h2>Currency Converter</h2>
-        <input
-          onChange={(e) => setAmount(e.target.value)}
-          type="number"
-          name="amount"
-          value={amount}
-          placeholder="Enter Amount ....."
-        />
-
-        <select
-          name="currency"
-          id=""
-          value={fromCurrency}
-          onChange={(e) => setFromCurrency(e.target.value)}
-        >
-          <option value="USD">USD</option>
-          <option value="INR">INR</option>
-          <option value="EUR">EUR</option>
-          <option value="UYU">UYU</option>
-        </select>
-        <p>To</p>
+      <div className="input-wrapper">
+        <h2 className="titles">Currency Converter</h2>
         <div className="input-container">
-          <input type="text" name="" value={convertAmount} readOnly />
+          <input
+            className="input-amount"
+            onChange={(e) => setAmount(e.target.value)}
+            type="number"
+            name="amount"
+            value={amount}
+            placeholder="Enter Amount ....."
+          />
+
           <select
+            className="select-currency"
+            name="currency"
+            id=""
+            value={fromCurrency}
+            onChange={(e) => setFromCurrency(e.target.value)}
+          >
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+            <option value="UYU">UYU</option>
+          </select>
+        </div>
+        <div className="text">
+          <p>To</p>
+        </div>
+        <div className="input-container">
+          <input
+            className="input-convert"
+            type="text"
+            name=""
+            value={convertAmount}
+            readOnly
+          />
+          <select
+            className="select-currency"
             name=""
             id=""
             value={toCurrency}
@@ -65,10 +78,11 @@ const Currency = () => {
             <option value="USD">USD</option>
           </select>
         </div>
-
-        <p>
-          Exachnge Rates : 1 {fromCurrency}={exchangeRate}
-        </p>
+        <div className="text">
+          <p>
+            Exachnge Rates : 1 {fromCurrency}={exchangeRate}
+          </p>
+        </div>
       </div>
     </>
   );

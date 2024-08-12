@@ -1,0 +1,33 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(180, 243, 246);
+}
+.input-container {
+  margin-top: 2rem;
+}
+.titles {
+  font-style: italic;
+  margin: 1rem;
+}
+.input-amount {
+  width: 16rem;
+  height: 1.5rem;
+  padding: 0.5rem;
+}
+.select-currency {
+  width: 4rem;
+  margin: 0 0.5rem;
+}
+.text {
+  margin-top: 1rem;
+  text-align: center;
+}
+.input-convert {
+  width: 16rem;
+  height: 1.5rem;
+  padding: 0.5rem;
+}
