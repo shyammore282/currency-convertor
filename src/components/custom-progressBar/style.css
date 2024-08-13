@@ -1,0 +1,26 @@
+.container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progressbar {
+  width: 15rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  background-color: grey;
+}
+.percentageBar {
+  height: 1rem;
+  border-radius: 0.5rem;
+  background-color: red;
+  text-align: center;
+}
+.input-value {
+  margin-top: 1rem;
+  text-align: center;
+}
+.input {
+  width: 5rem;
+  margin: 0 0.5rem;
+}
