@@ -1,15 +1,25 @@
 .filter-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 2rem;
 }
-.card {
-  width: 400px;
-  height: 200px;
-  background-color: aqua;
+.category-container {
+  margin: 1rem;
+  display: flex;
+  gap: 1rem;
 }
-.title {
-  background-color: red;
+.btnc {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid black;
 }
-.para {
-  background-color: green;
+.filter-products {
+  display: grid;
+  grid-template-columns: repeat(4, 15rem);
+  gap: 1rem;
+}
+.btn {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
 }

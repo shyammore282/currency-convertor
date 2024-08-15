@@ -55,6 +55,7 @@ const Filter = () => {
           {uniqueCategory.map((category, index) => (
             <div key={index}>
               <button
+                className="btnc"
                 onClick={() =>
                   setCurrentCategory(
                     currentCategory !== "" && currentCategory === uniqueCategory
@@ -74,7 +75,7 @@ const Filter = () => {
             ? filterProduct.map((productsItems) => (
                 <div className="filter" key={productsItems.id}>
                   {productsItems.title}
-                  <button>{productsItems.category}</button>
+                  <button className="btn">{productsItems.category}</button>
                 </div>
               ))
             : null}
