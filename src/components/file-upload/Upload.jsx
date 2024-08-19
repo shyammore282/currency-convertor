@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import "./style.css";
 
 const Upload = () => {
   const [file, setFile] = useState();
@@ -44,9 +45,9 @@ const Upload = () => {
 
   const onSubmit = () => {};
   return (
-    <div>
-      <h3>File Upload</h3>
+    <div className="container-upload">
       <div className="upload-wrapper">
+        <h3>File Upload</h3>
         <input
           onChange={handleUploadFile}
           type="file"
@@ -65,8 +66,10 @@ const Upload = () => {
           alt="file upload"
           style={{ width: "100px", height: "100px" }}
         />
+        <span className="button">
+          <button onClick={onSubmit}>submit</button>
+        </span>
       </div>
-      <button onClick={onSubmit}>submit</button>
     </div>
   );
 };
