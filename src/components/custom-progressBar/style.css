@@ -4,6 +4,11 @@
   justify-content: center;
   align-items: center;
 }
+.wrapper {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 4rem 10rem;
+}
 .progressbar {
   width: 15rem;
   height: 1rem;
@@ -14,6 +19,12 @@
   height: 1rem;
   border-radius: 0.5rem;
   background-color: red;
+  text-align: center;
+}
+p {
+  margin-top: 0.9rem;
+  color: red;
+  text-wrap: balance;
   text-align: center;
 }
 .input-value {

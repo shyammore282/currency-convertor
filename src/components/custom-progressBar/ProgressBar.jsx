@@ -2,15 +2,15 @@ import { useState } from "react";
 import "./style.css";
 
 const ProgressBar = () => {
-  const [percentage, setPercentage] = useState(0);
+  const [percentage, setPercentage] = useState();
   const [errorMsg, setErrorMsg] = useState("");
 
   const onChangeHandler = (e) => {
-    if (e.target.value > 100 && e.target.value < 0) {
+    if (e.target.value <= 100 && e.target.value > 0) {
       setPercentage(e.target.value);
-      setErrorMsg("please enter the value less then 100");
-    } else {
       setErrorMsg("");
+    } else {
+      setErrorMsg("please enter the value less then 100 ");
       setPercentage(e.target.value);
     }
   };
@@ -28,8 +28,11 @@ const ProgressBar = () => {
                 {percentage}
               </div>
             ) : (
-              <p>{errorMsg}</p>
+              ""
             )}
+          </div>
+          <div>
+            <p>{errorMsg}</p>
           </div>
           <div className="input-value">
             <label htmlFor="input">input percentage</label>
