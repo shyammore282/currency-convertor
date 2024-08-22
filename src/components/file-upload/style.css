@@ -29,6 +29,15 @@
 .upload-wrapper img {
   margin: 0.5rem;
 }
-.button {
+.button button {
   text-align: center;
+  padding: 0 1rem;
+  font-size: medium;
+  background-color: burlywood;
+  outline: none;
+  border: 1px solid;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
