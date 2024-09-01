@@ -21,10 +21,7 @@ const ProgressBar = () => {
         <div className="wrapper">
           <div className="progressbar">
             {percentage >= 0 && percentage <= 100 ? (
-              <div
-                className="percentageBar"
-                style={{ width: `${percentage}%` }}
-              >
+              <div className="percentageBar" style={{ width: `${percentage}%` }}>
                 {percentage}
               </div>
             ) : (
@@ -36,12 +33,7 @@ const ProgressBar = () => {
           </div>
           <div className="input-value">
             <label htmlFor="input">input percentage</label>
-            <input
-              className="input"
-              onChange={onChangeHandler}
-              type="number"
-              value={percentage}
-            />
+            <input className="input" onChange={onChangeHandler} type="number" value={percentage} />
           </div>
         </div>
       </div>

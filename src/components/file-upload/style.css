@@ -41,3 +41,17 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .container-upload {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .upload-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+}

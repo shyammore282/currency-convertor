@@ -31,3 +31,12 @@
   height: 1.5rem;
   padding: 0.5rem;
 }
+
+@media screen and (min-width: 400px) and (max-width: 767px) {
+  .input-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
