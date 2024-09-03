@@ -1,19 +1,12 @@
 import { useState } from "react";
+import OtpInput from "./OtpInput";
 import "./Style.css";
-
-const Button = () => {
-  <div className="button">
-    <button>Save the file</button>
-  </div>;
-};
 
 const Otplogin = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [showOtpInput, setShowOtpInput] = useState(false);
 
   const handelPhoneSubmit = (e) => {
-    e.preventDefault();
-
     //phone validation
     const regex = /[^0-9]/g;
     if (phoneNumber.length < 10 || regex.test(phoneNumber)) {
@@ -23,15 +16,16 @@ const Otplogin = () => {
     //backend api
     //show otp field
     setShowOtpInput(true);
+    e.preventDefault();
   };
 
   return (
     <div className="container">
       <h1>otp login stystem</h1>
-      <Button />
       {!showOtpInput ? (
         <form onSubmit={handelPhoneSubmit}>
           <input
+            className="inputphone"
             type="tel"
             value={phoneNumber}
             placeholder="Enter the phone number..."
@@ -40,7 +34,10 @@ const Otplogin = () => {
           <button type="submit">Submit</button>
         </form>
       ) : (
-        <div className="formotpinput">show otp</div>
+        <div className="formotpinput">
+          <h4>fill the otp {phoneNumber}</h4>
+          <OtpInput onSubmitOtp />
+        </div>
       )}
     </div>
   );
