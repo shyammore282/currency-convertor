@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-const OtpInput = (onSubmitOtp = () => {}) => {
+const OtpInput = () => {
   const [otp, setOtp] = useState(new Array(4).fill(""));
   const inputRefs = useRef([]);
 
@@ -9,6 +9,10 @@ const OtpInput = (onSubmitOtp = () => {}) => {
       inputRefs.current[0].focus();
     }
   }, []);
+
+  const onOtpSubmit = (otp) => {
+    console.log("login successfull", otp);
+  };
 
   const handleChange = (getIndex, e) => {
     const value = e.target.value;
@@ -20,14 +24,32 @@ const OtpInput = (onSubmitOtp = () => {}) => {
     setOtp(newOtp);
 
     // submit trigger
-
     const combinedOtp = newOtp.join("");
-    onSubmitOtp(combinedOtp);
+    if (combinedOtp.length === 4) {
+      onOtpSubmit(combinedOtp);
+    }
+
+    // Move to next input if current field id filled
+    if (value && getIndex < 3 && inputRefs.current[getIndex + 1]) {
+      inputRefs.current[getIndex + 1].focus();
+    }
   };
 
-  const handleClick = (getIndex) => {};
+  const handleClick = (getIndex) => {
+    inputRefs.current[getIndex].setSelectionRange(1, 1);
 
-  const handleKeyDown = (getIndex, e) => {};
+    //  move the previes empty field
+    // if (getIndex > 0 && !otp[getIndex - 1]) {
+    //   inputRefs.current[otp.indexOf("")].focus();
+    // }
+  };
+
+  const handleKeyDown = (getIndex, e) => {
+    // move focus to the previous input field on backspace
+    if (e.key === "Backspace" && !otp[getIndex] && getIndex > 0 && inputRefs.current[getIndex - 1]) {
+      inputRefs.current[getIndex - 1].focus();
+    }
+  };
   return (
     <div className="input">
       {otp.map((value, index) => {
