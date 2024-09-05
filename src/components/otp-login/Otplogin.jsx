@@ -22,7 +22,6 @@ const Otplogin = () => {
     if (phoneNumber.length === 10) {
       setShowOtpInput(true);
     }
-
     e.preventDefault();
   };
 
@@ -44,7 +43,7 @@ const Otplogin = () => {
         ) : (
           <div className="formotpinput">
             <h4>fill the otp </h4>
-            <OtpInput length={4} />
+            <OtpInput />
           </div>
         )}
       </div>

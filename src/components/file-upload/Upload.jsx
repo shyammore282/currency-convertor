@@ -48,12 +48,7 @@ const Upload = () => {
     <div className="container-upload">
       <div className="upload-wrapper">
         <h3>File Upload</h3>
-        <input
-          onChange={handleUploadFile}
-          type="file"
-          name="file"
-          ref={uploadRef}
-        />
+        <input onChange={handleUploadFile} type="file" name="file" ref={uploadRef} />
         <label htmlFor="upload">upload the file pdf/jpg/png</label>
 
         <label htmlFor="">
@@ -61,11 +56,7 @@ const Upload = () => {
         </label>
         <p ref={statusRef}></p>
         <p ref={loadRef}></p>
-        <img
-          src={file}
-          alt="file upload"
-          style={{ width: "100px", height: "100px" }}
-        />
+        <img src={file} alt="file upload" style={{ width: "100px", height: "100px" }} />
         <span className="button">
           <button onClick={onSubmit}>submit</button>
         </span>
